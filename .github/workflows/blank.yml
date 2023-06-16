@@ -1,0 +1,17 @@
+name: Hello Action
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello-action-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Print message and commit SHA
+        run: |
+          echo "Hello GitHub Action"
+          echo "Commit SHA: ${{ github.sha }}"
